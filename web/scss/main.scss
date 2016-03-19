@@ -108,10 +108,10 @@ section {
 .k_about {
     background-color: #eed5b7;
     hr {
-       height: 1px;
-       width: 250px;
-       background-color: black;
-       border: 0px;
+        height: 1px;
+        width: 250px;
+        background-color: black;
+        border: 0px;
     }
     a {
         outline: none;
@@ -249,7 +249,7 @@ svg {
     z-index: 1;
     position: relative;
     path {
-/*        fill: red;*/
+        /*        fill: red;*/
     }
 }
 
@@ -323,19 +323,20 @@ svg {
 }
 
 .login {
-    button {}
-    width: 100px;
-    height: 32px;
-    float: right;
-    position: relative;
-    z-index: 100;
-    outline: none;
-    display: inline-block;
-    color: white;
-    border: 2.5px;
-    background-color: rgba(0, 0, 0, 0.4);
-    margin-right: 0px;
-    margin-left: 7px;
+    button {
+        width: 100px;
+        height: 32px;
+        float: right;
+        position: relative;
+        z-index: 100;
+        outline: none;
+        display: inline-block;
+        color: white;
+        border: 2.5px;
+        background-color: rgba(0, 0, 0, 0.4);
+        margin-right: 0px;
+        margin-left: 7px;
+    }
 }
 
 .close {
@@ -345,9 +346,10 @@ svg {
 .modal-header {
     outline: none;
     background-color: #5cb85c;
-    h4 {}
-    text-align: center;
-    letter-spacing: 3px;
+    h4 {
+        text-align: center;
+        letter-spacing: 3px;
+    } 
 }
 
 .foot_descr {
