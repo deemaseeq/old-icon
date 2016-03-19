@@ -14,7 +14,7 @@
     </head>
     <body>
         <h1>Here will be store</h1>
-        <h2>Product list sample - Push from Netbeans</h2>
+        <h2>Product list sample - Pull from GitHub</h2>
         <%! dao.Product product = dao.DatabaseInteraction.showProduct(); %>
         <div style="text-align: center">
         <h3><%= product.getProductName() %> <%= product.getProductID() %></h3>
