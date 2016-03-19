@@ -567,7 +567,7 @@
         <script src="libs/jqBootstrapValidation/jqBootstrapValidation.js"></script>
         <script src="js/common.js"></script>
         <script src="libs/jqBootstrapValidation/jqBootstrapValidation.js"></script>
-        <script src="http://maps.googleapis.com/maps/api/js"></script>
+        <script src="js/googlemapsapi.js"></script>
         <script>
             var myCenter = new google.maps.LatLng(49.993848, 36.238026);
 
