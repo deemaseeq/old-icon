@@ -559,7 +559,7 @@
         <script src="libs/jquery/jquery-2.1.3.min.js"></script>
         <script src="libs/parallax/parallax.min.js"></script>
         <script src="libs/magnific-popup/jquery.magnific-popup.min.js"></script>
-        <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+        <script src="libs/bootstrap/bootstrap.min.js"></script>
         <script src="libs/mixitup/mixitup.min.js"></script>
         <script src="libs/scroll2id/PageScroll2id.min.js"></script>
         <script src="libs/waypoints/waypoints.min.js"></script>
