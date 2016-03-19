@@ -1,0 +1,91 @@
+@import "../bourbon/bourbon";
+
+$color: tomato;
+$text_color: #888888;
+$main_color: #222222;
+$bg_light: firebrick;
+
+@mixin kerning($kerning) {
+    letter-spacing: $kerning + px;
+}
+
+body {
+    color: $main_color;
+}
+
+a {
+    color: $color;
+}
+
+.color_element {
+    color: $color;
+}
+
+.color_bg {
+    background-color: $color;
+}
+
+.color_border {
+    border-color: $color;
+}
+
+.bg_light {
+    background-color: $bg_light;
+}
+
+.bg_dark {
+    background-color: $main_color;
+    color: white;
+    a {
+        color: white;
+    }
+}
+
+.main_color_bg {
+    background-color: $main_color;
+}
+
+.top_text {
+    p {
+        @include kerning(10);
+    }
+}
+
+.s_descr {
+    &::after {
+        background-color: $main_color;
+    }
+}
+
+.section {
+    h3 {
+        color: $text_color;
+    }
+}
+
+.s_about {
+    p:nth-child(even) {
+        color: red;
+    }
+}
+
+.s_portfolio {
+    li {
+        color: black;
+    }
+}
+
+.text-danger {
+    color: $color;
+}
+
+form {
+    input:focus,
+        textarea:focus {
+        border: 1px solid red;
+        letter-spacing: 3px;
+    }
+    button {
+        letter-spacing: 3px;
+    }
+}

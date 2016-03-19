@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-configuration PUBLIC "-//Hibernate/Hibernate Configuration DTD 3.0//EN" "http://hibernate.sourceforge.net/hibernate-configuration-3.0.dtd">
+<hibernate-configuration>
+  <session-factory>
+    <property name="hibernate.dialect">org.hibernate.dialect.MySQLDialect</property>
+    <property name="hibernate.connection.driver_class">com.mysql.jdbc.Driver</property>
+    <property name="hibernate.connection.url">jdbc:mysql://localhost:3306/old-icon?zeroDateTimeBehavior=convertToNull</property>
+    <property name="hibernate.connection.username">root</property>
+    <property name="hibernate.connection.password">password</property>
+    
+    <mapping resource="resources/hibernate-mapping/User.hbm.xml"/>
+    <mapping resource="resources/hibernate-mapping/Order.hbm.xml"/>
+    <mapping resource="resources/hibernate-mapping/UserGroup.hbm.xml"/>
+    <!--<mapping class="dao.Order"/>-->
+    <!--<mapping class="dao.User"/>-->
+    <!--<mapping class="dao.UserGroup"/>-->
+    <mapping resource="resources/hibernate-mapping/Product.hbm.xml"/>
+    <mapping resource="resources/hibernate-mapping/OrderedProduct.hbm.xml"/>
+    <mapping resource="resources/hibernate-mapping/ProductType.hbm.xml"/>
+  </session-factory>
+</hibernate-configuration>

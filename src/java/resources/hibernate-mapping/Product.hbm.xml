@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+    <class name="dao.Product" table="product">
+        
+        <id column="product_id" name="productID" type="integer"/>
+        
+        <property column="product_name"
+                  name="productName"
+                  type="string"/>
+        
+        <property column="product_price"
+                  name="productPrice"
+                  type="double"/>
+        
+        <property column="product_type_id"
+                  name="productTypeID"
+                  type="integer"/>
+        
+    </class>
+</hibernate-mapping>
