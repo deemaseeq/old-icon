@@ -1,4 +1,3 @@
-<%@page import="dao.Product"%>
 <%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <%-- 
     Document   : store
@@ -6,6 +5,7 @@
     Author     : dmitriy
 --%>
 
+<%@page import="dao.Product"%>
 <%@page import="dao.DatabaseInteraction"%>
 <%@page import="java.util.List"%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
@@ -14,7 +14,7 @@
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <link rel="stylesheet" href="libs/w3css/w3.css">
-        <title>JSP Store Sample</title>
+        <title>Old Icon Shop</title>
     </head>
     <body>
         <h1>Here will be store</h1>
