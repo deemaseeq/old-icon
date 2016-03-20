@@ -15,6 +15,7 @@ public class Product {
     private String productName;
     private Double productPrice;
     private Integer productTypeID;
+    private String productPic;
 
     public Product() {
     }
@@ -49,6 +50,14 @@ public class Product {
 
     public void setProductTypeID(Integer productTypeID) {
         this.productTypeID = productTypeID;
+    }
+
+    public String getProductPic() {
+        return productPic;
+    }
+
+    public void setProductPic(String productPic) {
+        this.productPic = productPic;
     }
 
     @Override
