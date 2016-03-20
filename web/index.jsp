@@ -35,6 +35,12 @@
 
                     <div class="col-md-12">
 
+                        <form action="12.html" novalidate>
+                            <button class="shop" type="submit">Shop</button>
+                        
+                        
+                        </form>
+
 
                         <form novalidate id="SignIn" action="SignInServlet" method="get">
                             <button class="login" type="button" data-toggle="modal" data-target="#myModal">Вход</button>
