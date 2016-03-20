@@ -13,6 +13,10 @@
                   name="productPrice"
                   type="double"/>
         
+        <property column="product_pic_src" 
+                  name="productPic" 
+                  type="string" />
+        
         <property column="product_type_id"
                   name="productTypeID"
                   type="integer"/>
