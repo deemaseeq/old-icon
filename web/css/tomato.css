@@ -1,51 +1,53 @@
-/*
-Error: File to import not found or unreadable: ../bourbon/bourbon.
-        on line 1 of C:\Users\Yckaa\Desktop\OIT\web\scss\tomato.scss
+body {
+  color: #222222; }
 
-1: @import "../bourbon/bourbon";
-2: 
-3: $color: tomato;
-4: $text_color: #888888;
-5: $main_color: #222222;
-6: $bg_light: firebrick;
+a {
+  color: tomato; }
 
-Backtrace:
-C:\Users\Yckaa\Desktop\OIT\web\scss\tomato.scss:1
-D:/Programmaz/Ruby22-x64/lib/ruby/gems/2.2.0/gems/sass-3.4.21/lib/sass/tree/import_node.rb:67:in `rescue in import'
-D:/Programmaz/Ruby22-x64/lib/ruby/gems/2.2.0/gems/sass-3.4.21/lib/sass/tree/import_node.rb:45:in `import'
-D:/Programmaz/Ruby22-x64/lib/ruby/gems/2.2.0/gems/sass-3.4.21/lib/sass/tree/import_node.rb:28:in `imported_file'
-D:/Programmaz/Ruby22-x64/lib/ruby/gems/2.2.0/gems/sass-3.4.21/lib/sass/tree/import_node.rb:37:in `css_import?'
-D:/Programmaz/Ruby22-x64/lib/ruby/gems/2.2.0/gems/sass-3.4.21/lib/sass/tree/visitors/perform.rb:311:in `visit_import'
-D:/Programmaz/Ruby22-x64/lib/ruby/gems/2.2.0/gems/sass-3.4.21/lib/sass/tree/visitors/base.rb:36:in `visit'
-D:/Programmaz/Ruby22-x64/lib/ruby/gems/2.2.0/gems/sass-3.4.21/lib/sass/tree/visitors/perform.rb:158:in `block in visit'
-D:/Programmaz/Ruby22-x64/lib/ruby/gems/2.2.0/gems/sass-3.4.21/lib/sass/stack.rb:79:in `block in with_base'
-D:/Programmaz/Ruby22-x64/lib/ruby/gems/2.2.0/gems/sass-3.4.21/lib/sass/stack.rb:115:in `with_frame'
-D:/Programmaz/Ruby22-x64/lib/ruby/gems/2.2.0/gems/sass-3.4.21/lib/sass/stack.rb:79:in `with_base'
-D:/Programmaz/Ruby22-x64/lib/ruby/gems/2.2.0/gems/sass-3.4.21/lib/sass/tree/visitors/perform.rb:158:in `visit'
-D:/Programmaz/Ruby22-x64/lib/ruby/gems/2.2.0/gems/sass-3.4.21/lib/sass/tree/visitors/base.rb:52:in `block in visit_children'
-D:/Programmaz/Ruby22-x64/lib/ruby/gems/2.2.0/gems/sass-3.4.21/lib/sass/tree/visitors/base.rb:52:in `map'
-D:/Programmaz/Ruby22-x64/lib/ruby/gems/2.2.0/gems/sass-3.4.21/lib/sass/tree/visitors/base.rb:52:in `visit_children'
-D:/Programmaz/Ruby22-x64/lib/ruby/gems/2.2.0/gems/sass-3.4.21/lib/sass/tree/visitors/perform.rb:167:in `block in visit_children'
-D:/Programmaz/Ruby22-x64/lib/ruby/gems/2.2.0/gems/sass-3.4.21/lib/sass/tree/visitors/perform.rb:179:in `with_environment'
-D:/Programmaz/Ruby22-x64/lib/ruby/gems/2.2.0/gems/sass-3.4.21/lib/sass/tree/visitors/perform.rb:166:in `visit_children'
-D:/Programmaz/Ruby22-x64/lib/ruby/gems/2.2.0/gems/sass-3.4.21/lib/sass/tree/visitors/base.rb:36:in `block in visit'
-D:/Programmaz/Ruby22-x64/lib/ruby/gems/2.2.0/gems/sass-3.4.21/lib/sass/tree/visitors/perform.rb:186:in `visit_root'
-D:/Programmaz/Ruby22-x64/lib/ruby/gems/2.2.0/gems/sass-3.4.21/lib/sass/tree/visitors/base.rb:36:in `visit'
-D:/Programmaz/Ruby22-x64/lib/ruby/gems/2.2.0/gems/sass-3.4.21/lib/sass/tree/visitors/perform.rb:157:in `visit'
-D:/Programmaz/Ruby22-x64/lib/ruby/gems/2.2.0/gems/sass-3.4.21/lib/sass/tree/visitors/perform.rb:8:in `visit'
-D:/Programmaz/Ruby22-x64/lib/ruby/gems/2.2.0/gems/sass-3.4.21/lib/sass/tree/root_node.rb:36:in `css_tree'
-D:/Programmaz/Ruby22-x64/lib/ruby/gems/2.2.0/gems/sass-3.4.21/lib/sass/tree/root_node.rb:29:in `render_with_sourcemap'
-D:/Programmaz/Ruby22-x64/lib/ruby/gems/2.2.0/gems/sass-3.4.21/lib/sass/engine.rb:378:in `_render_with_sourcemap'
-D:/Programmaz/Ruby22-x64/lib/ruby/gems/2.2.0/gems/sass-3.4.21/lib/sass/engine.rb:295:in `render_with_sourcemap'
-D:/Programmaz/Ruby22-x64/lib/ruby/gems/2.2.0/gems/sass-3.4.21/lib/sass/exec/sass_scss.rb:414:in `run'
-D:/Programmaz/Ruby22-x64/lib/ruby/gems/2.2.0/gems/sass-3.4.21/lib/sass/exec/sass_scss.rb:63:in `process_result'
-D:/Programmaz/Ruby22-x64/lib/ruby/gems/2.2.0/gems/sass-3.4.21/lib/sass/exec/base.rb:52:in `parse'
-D:/Programmaz/Ruby22-x64/lib/ruby/gems/2.2.0/gems/sass-3.4.21/lib/sass/exec/base.rb:19:in `parse!'
-D:/Programmaz/Ruby22-x64/lib/ruby/gems/2.2.0/gems/sass-3.4.21/bin/sass:13:in `<top (required)>'
-D:/Programmaz/Ruby22-x64/bin/sass:23:in `load'
-D:/Programmaz/Ruby22-x64/bin/sass:23:in `<main>'
-*/
-body:before {
-  white-space: pre;
-  font-family: monospace;
-  content: "Error: File to import not found or unreadable: ../bourbon/bourbon.\A         on line 1 of C:\Users\Yckaa\Desktop\OIT\web\scss\tomato.scss\A \A 1: @import \"../bourbon/bourbon\";\A 2: \A 3: $color: tomato;\A 4: $text_color: #888888;\A 5: $main_color: #222222;\A 6: $bg_light: firebrick;"; }
+.color_element {
+  color: tomato; }
+
+.color_bg {
+  background-color: tomato; }
+
+.color_border {
+  border-color: tomato; }
+
+.bg_light {
+  background-color: firebrick; }
+
+.bg_dark {
+  background-color: #222222;
+  color: white; }
+  .bg_dark a {
+    color: white; }
+
+.main_color_bg {
+  background-color: #222222; }
+
+.top_text p {
+  letter-spacing: 10px; }
+
+.s_descr::after {
+  background-color: #222222; }
+
+.section h3 {
+  color: #888888; }
+
+.s_about p:nth-child(even) {
+  color: red; }
+
+.s_portfolio li {
+  color: black; }
+
+.text-danger {
+  color: tomato; }
+
+form input:focus,
+form textarea:focus {
+  border: 1px solid red;
+  letter-spacing: 3px; }
+form button {
+  letter-spacing: 3px; }
+
+/*# sourceMappingURL=tomato.css.map */
