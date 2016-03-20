@@ -14,14 +14,9 @@
     </head>
     <body>
         <h1>Here will be store</h1>
-        <h2>Product list sample - Pull from GitHub</h2>
-        <%! dao.Product product = dao.DatabaseInteraction.showProduct(); %>
-        <div style="text-align: center">
-        <h3><%= product.getProductName() %> <%= product.getProductID() %></h3>
-        <ul>
-            <li><%= product.getProductPrice() %></li>
-            <li><%= product.getProductTypeID() %></li>
-        </ul>
+        <h2>Product list sample</h2>
+        <div id="productList">
+            <%= products.View.showProductList() %>
         </div>
     </body>
 </html>
