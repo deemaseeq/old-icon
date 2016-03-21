@@ -35,7 +35,7 @@
 
                     <div class="col-md-12">
 
-                        <form action="12.html" novalidate>
+                        <form action="shop.html" novalidate>
                             <button class="shop" type="submit">Shop</button>
                         
                         
