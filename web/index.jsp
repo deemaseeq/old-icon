@@ -35,7 +35,7 @@
 
                     <div class="col-md-12">
 
-                        <form action="shop.html" novalidate>
+                        <form action="shop.jsp" novalidate>
                             <button class="shop" type="submit">Shop</button>
                         
                         
@@ -357,10 +357,6 @@
 
 
 
-
-
-
-
         <section id="portfolio" class="s_portfolio" >
             <div class="section_header">
                 <h2>Рortfolio</h2>
@@ -573,7 +569,7 @@
         <script src="libs/jqBootstrapValidation/jqBootstrapValidation.js"></script>
         <script src="js/common.js"></script>
         <script src="libs/jqBootstrapValidation/jqBootstrapValidation.js"></script>
-        <script src="js/googlemapsapi.js"></script>
+        <script src="http://maps.googleapis.com/maps/api/js"></script>
         <script>
             var myCenter = new google.maps.LatLng(49.993848, 36.238026);
 
