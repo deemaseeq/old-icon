@@ -40,3 +40,30 @@ body{
 .row{
     margin: 0;
 }
+
+.product_image {
+    text-align: left;
+    img{
+        width: 200px;
+        height:200px;
+    }
+}
+
+.panel-heading{
+    font-size: 20px;
+    height: 50px;
+}
+
+.product_info{
+    padding-bottom: 30px;
+}
+
+.product_type{
+    text-align: right;
+}
+
+.buying_section{
+    button{
+        text-align: right;
+    }
+}
