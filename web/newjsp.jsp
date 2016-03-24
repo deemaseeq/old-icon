@@ -6,6 +6,7 @@
 --%>
 
 <%@page import="dao.DatabaseInteraction"%>
+<%@page import="products.View" %>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
