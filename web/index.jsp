@@ -64,12 +64,14 @@
                                             </label>
                                         </div>
                                         <div class="modal-footer">
+                                            <label>Some shit</label>
                                             <button class="btn btn-default btn-lg" type="submit">Log in</button>
                                         </div>
                                     </div>
                                 </div>
                             </div>
                         </form>	
+                        
                         <form novalidate id="signUp" action="SignUpServlet" method="get">
                             <button class="login" type="button" data-toggle="modal" data-target="#myModal2">Регистрация</button>	
                             <div class="modal fade" id="myModal2" role="dialog">
