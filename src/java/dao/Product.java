@@ -16,6 +16,7 @@ public class Product {
     private Double productPrice;
     private Integer productTypeID;
     private String productPic;
+    private String productDescription;
 
     public Product() {
     }
@@ -58,6 +59,14 @@ public class Product {
 
     public void setProductPic(String productPic) {
         this.productPic = productPic;
+    }
+
+    public String getProductDescription() {
+        return productDescription;
+    }
+
+    public void setProductDescription(String productDescription) {
+        this.productDescription = productDescription;
     }
 
     @Override

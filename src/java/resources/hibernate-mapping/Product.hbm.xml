@@ -17,6 +17,11 @@
                   name="productPic" 
                   type="string" />
         
+        <property column="product_descr_src"
+                  name="productDescription"
+                  type="string" />
+        
+        
         <property column="product_type_id"
                   name="productTypeID"
                   type="integer"/>
