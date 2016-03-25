@@ -42,7 +42,7 @@
                         </form>
 
 
-                        <form novalidate id="SignIn" action="SignInServlet" method="get">
+                        <form novalidate id="signIn" action="SignInServlet" method="post">
                             <button class="login" type="button" data-toggle="modal" data-target="#myModal">Вход</button>
                             <div class="modal fade" id="myModal" role="dialog">
                                 <div class="modal-dialog">
@@ -54,7 +54,7 @@
                                         <div class="modal-body">
                                             <label class="form-group">
                                                 <i class="fa fa-user"></i> Enter ur name
-                                                <input type="text" name="username" placeholder="Ur name" data-validation-required-message="Enter the name" required    >
+                                                <input id="inputLogin" type="text" name="username" placeholder="Ur name" data-validation-required-message="Enter the name" required    >
                                                 <span class="help-block text-danger"></span>
                                             </label>
                                             <label class="form-group">
@@ -64,22 +64,22 @@
                                             </label>
                                         </div>
                                         <div class="modal-footer">
-                                            <label>Some shit</label>
-                                            <button class="btn btn-default btn-lg" type="submit">Log in</button>
+                                            <label id="errorMessage" class="footer_mes"> </label>
+                                            <button id="buttonSignIn" class="btn btn-default btn-lg" type="submit">Log in</button>
                                         </div>
                                     </div>
                                 </div>
                             </div>
                         </form>	
                         
-                        <form novalidate id="signUp" action="SignUpServlet" method="get">
+                        <form novalidate id="signUp" action="SignUpServlet" method="post">
                             <button class="login" type="button" data-toggle="modal" data-target="#myModal2">Регистрация</button>	
                             <div class="modal fade" id="myModal2" role="dialog">
                                 <div class="modal-dialog">
                                     <div class="modal-content">
                                         <div class="modal-header">
                                             <button type="button" class="close " data-dismiss="modal">&times;</button>
-                                            <h4 class="modal-title">Registration</h4>
+                                            <h4 class="modal-title">Регистрация</h4>
                                         </div>
                                         <div class="modal-body">
                                             <label class="form-group">
@@ -90,12 +90,12 @@
                                             </label>
                                             <label class="form-group">
                                                 <i class="fa fa-envelope"></i> Enter ur E-mail
-                                                <input type="email" name="email" id="inputPassword" placeholder="Email" data-validation-required-message="Enter the E-mail" required >
+                                                <input type="email" name="email" placeholder="Email" data-validation-required-message="Enter the E-mail" required >
                                                 <span class="help-block text-danger"></span>
                                             </label>
                                             <label class="form-group">
                                                 <i class="fa fa-unlock-alt"></i> Enter ur password
-                                                <input type="password" name="pass" data-minlength="6"  id="inputPassword" placeholder="Password" data-validation-required-message="Enter the password" required >
+                                                <input type="password" name="pass" data-minlength="6"  placeholder="Password" data-validation-required-message="Enter the password" required >
                                                 <span class="help-block text-danger"></span>
                                             </label>
                                         </div>
@@ -571,6 +571,7 @@
         <script src="libs/jqBootstrapValidation/jqBootstrapValidation.js"></script>
         <script src="js/common.js"></script>
         <script src="libs/jqBootstrapValidation/jqBootstrapValidation.js"></script>
+        <script src="js/signIn.js"></script>
         <script src="http://maps.googleapis.com/maps/api/js"></script>
         <script>
             var myCenter = new google.maps.LatLng(49.993848, 36.238026);
