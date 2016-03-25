@@ -35,25 +35,38 @@ public class SignInServlet extends HttpServlet {
      * @throws ServletException if a servlet-specific error occurs
      * @throws IOException if an I/O error occurs
      */
-    protected void processRequest(HttpServletRequest request, HttpServletResponse response)
+    protected void validValues(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        response.setContentType("text/html;charset=UTF-8");
+        response.setContentType("text/plain");
+        response.setCharacterEncoding("UTF-8");
         try (PrintWriter out = response.getWriter()) {
 
-            out.println("<!DOCTYPE html>");
-            out.println("<html>");
-            out.println("<head>");
-            out.println("<title>Servlet SignInServlet</title>");
-            out.println("</head>");
-            out.println("<body>");
-            out.println("<h1>Servlet SignInServlet at " + request.getContextPath() + "</h1>");
-            out.println("<h2>");
-            out.println(username + " " + pass + " " + email + " ");
-            out.println("</h2>");
-            out.println("<h2>");
-            out.println("</h2>");
-            out.println("</body>");
-            out.println("</html>");
+            out.println("Succesful login.");
+
+//            out.println("<!DOCTYPE html>");
+//            out.println("<html>");
+//            out.println("<head>");
+//            out.println("<title>Servlet SignInServlet</title>");
+//            out.println("</head>");
+//            out.println("<body>");
+//            out.println("<h1>Servlet SignInServlet at " + request.getContextPath() + "</h1>");
+//            out.println("<h2>");
+//            out.println(username + " " + pass + " " + email + " ");
+//            out.println("</h2>");
+//            out.println("<h2>");
+//            out.println("</h2>");
+//            out.println("</body>");
+//            out.println("</html>");
+        }
+    }
+
+    protected void invalidValues(HttpServletRequest request, HttpServletResponse response)
+            throws ServletException, IOException {
+        response.setContentType("text/plain");
+        response.setCharacterEncoding("UTF-8");
+        try (PrintWriter out = response.getWriter()) {
+
+            out.println("Invalid Values.");
         }
     }
 
@@ -74,13 +87,17 @@ public class SignInServlet extends HttpServlet {
         pass = request.getParameter("pass");
 
         User user = DatabaseInteraction.getUser(username);
+        if (user == null) {
+            invalidValues(request, response);
+        }
         username = user.getUsername();
-        pass = user.getPassword();
-        email = user.getEmail();
+        if (!user.getPassword().equals(pass)) {
+            invalidValues(request, response);
+        }
 
-        processRequest(request, response);
+        validValues(request, response);
     }
-
+    
     /**
      * Handles the HTTP <code>POST</code> method.
      *
@@ -92,7 +109,20 @@ public class SignInServlet extends HttpServlet {
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        processRequest(request, response);
+
+        username = request.getParameter("username");
+        pass = request.getParameter("pass");
+
+        User user = DatabaseInteraction.getUser(username);
+        if (user == null) {
+            invalidValues(request, response);
+        }
+        username = user.getUsername();
+        if (!user.getPassword().equals(pass)) {
+            invalidValues(request, response);
+        }
+
+        validValues(request, response);
     }
 
     /**

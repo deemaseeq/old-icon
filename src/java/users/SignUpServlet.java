@@ -129,6 +129,36 @@ public class SignUpServlet extends HttpServlet {
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
 
+//        HibernateUtil.closeSessionFactory();
+//        try {
+//            
+//            Connection dbConnect = DriverManager.getConnection("jdbc:mysql://localhost:3306/usrs?zeroDateTimeBehavior=convertToNull", "root", "password");
+//            
+//            if(dbConnect != null){
+//                Statement addUser = dbConnect.createStatement();
+//                addUser.execute("INSERT INTO usrs.users (login, pass) VALUES ('" + username + "','" + pass + "')");
+//            } else {
+//                noConnectionResponse(request, response);
+//            }
+//        } catch (SQLException ex) {
+//            Logger.getLogger(SignUpServlet.class.getName()).log(Level.SEVERE, null, ex);
+//            noConnectionResponse(request, response);
+//        }
+        //processRequest(request, response);
+    }
+
+    /**
+     * Handles the HTTP <code>POST</code> method.
+     *
+     * @param request servlet request
+     * @param response servlet response
+     * @throws ServletException if a servlet-specific error occurs
+     * @throws IOException if an I/O error occurs
+     */
+    @Override
+    protected void doPost(HttpServletRequest request, HttpServletResponse response)
+            throws ServletException, IOException {
+        
         username = request.getParameter("username");
         pass = request.getParameter("pass");
         email = request.getParameter("email");
@@ -165,38 +195,10 @@ public class SignUpServlet extends HttpServlet {
             session.getTransaction().commit();
             succesfullConnectionResponse(request, response);
         }
-
-//        HibernateUtil.closeSessionFactory();
-//        try {
-//            
-//            Connection dbConnect = DriverManager.getConnection("jdbc:mysql://localhost:3306/usrs?zeroDateTimeBehavior=convertToNull", "root", "password");
-//            
-//            if(dbConnect != null){
-//                Statement addUser = dbConnect.createStatement();
-//                addUser.execute("INSERT INTO usrs.users (login, pass) VALUES ('" + username + "','" + pass + "')");
-//            } else {
-//                noConnectionResponse(request, response);
-//            }
-//        } catch (SQLException ex) {
-//            Logger.getLogger(SignUpServlet.class.getName()).log(Level.SEVERE, null, ex);
-//            noConnectionResponse(request, response);
-//        }
-        //processRequest(request, response);
+        
     }
-
-    /**
-     * Handles the HTTP <code>POST</code> method.
-     *
-     * @param request servlet request
-     * @param response servlet response
-     * @throws ServletException if a servlet-specific error occurs
-     * @throws IOException if an I/O error occurs
-     */
-    /*@Override
-    protected void doPost(HttpServletRequest request, HttpServletResponse response)
-            throws ServletException, IOException {
-        processRequest(request, response);
-    }*/
+    
+    
     /**
      * Returns a short description of the servlet.
      *
