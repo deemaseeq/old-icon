@@ -15,6 +15,8 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import org.hibernate.Session;
 import dao.DatabaseInteraction;
+import javax.servlet.RequestDispatcher;
+import javax.servlet.http.HttpSession;
 
 /**
  *
@@ -39,6 +41,7 @@ public class SignInServlet extends HttpServlet {
             throws ServletException, IOException {
         response.setContentType("text/plain");
         response.setCharacterEncoding("UTF-8");
+
         try (PrintWriter out = response.getWriter()) {
 
             out.println("Succesful login.");
@@ -82,20 +85,12 @@ public class SignInServlet extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-
-        username = request.getParameter("username");
-        pass = request.getParameter("pass");
-
-        User user = DatabaseInteraction.getUser(username);
-        if (user == null) {
-            invalidValues(request, response);
-        }
-        username = user.getUsername();
-        if (!user.getPassword().equals(pass)) {
-            invalidValues(request, response);
-        }
-
-        validValues(request, response);
+        
+        request.getSession().invalidate();
+        response.sendRedirect("/OldIcon");
+//        RequestDispatcher dispatcher = request.getRequestDispatcher("index.jsp");
+//        dispatcher.forward(request, response);
+        
     }
     
     /**
@@ -116,12 +111,19 @@ public class SignInServlet extends HttpServlet {
         User user = DatabaseInteraction.getUser(username);
         if (user == null) {
             invalidValues(request, response);
-        }
-        username = user.getUsername();
-        if (!user.getPassword().equals(pass)) {
-            invalidValues(request, response);
+            return;
         }
 
+        if (!user.getPassword().equals(pass)) {
+            invalidValues(request, response);
+            return;
+        }
+
+        HttpSession newSession = request.getSession(true);
+        newSession.setMaxInactiveInterval(600);
+        newSession.setAttribute("logged", true);
+        newSession.setAttribute("username", username);
+        
         validValues(request, response);
     }
 
