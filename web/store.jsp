@@ -34,28 +34,16 @@
 
             <div class="w3-top">
                 <ul class="w3-navbar w3-card-2 w3-black">
-                    <li class="w3-hide-medium w3-hide-large w3-black w3-opennav w3-right">
-                        <a href="javascript:void(0);" onclick="myFunction()">☰</a>
-                    </li>
                     <li class="w3-center w3-hide-small">
                         <label class="w3-xlarge header-text">OLD ICON SHOP</label>
                     </li>
-                    <li  class="w3-left"><a href="index.jsp"><i class="fa fa-home w3-large"></i></a></li>
+                    <li  class="w3-left"><a href="/OldIcon"><i class="fa fa-home w3-large"></i></a></li>
                     <li  class="w3-right w3-hide-small"><a href="#"><i class="fa fa-user w3-large"></i></a></li>
                     <li  class="w3-right w3-hide-small"><a href="#"><i class="fa fa-shopping-cart w3-large"></i></a></li>
                     <li  class="w3-right w3-hide-small"><a href="#"><i class="fa fa-search w3-large"></i></a></li>
                 </ul>
 
-                <div id="demo" class="w3-hide w3-hide-large w3-hide-medium">
-                    <ul class="w3-navbar w3-left-align w3-large w3-black">
-                        <li class="w3-center">
-                            <label class="w3-xlarge header-text">OLD ICON SHOP</label>
-                        </li>
-                        <li class="w3-right"><a href="#"><i class="fa fa-user w3-large"></i></a></li>
-                        <li  class="w3-center"><a href="#"><i class="fa fa-shopping-cart w3-large"></i></a></li>
-                        <li  class="w3-center"><a href="#"><i class="fa fa-search w3-large"></i></a></li>
-                    </ul>
-                </div>
+                
 
             </div>
 
