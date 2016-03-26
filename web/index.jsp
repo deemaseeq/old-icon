@@ -1,3 +1,4 @@
+<%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <%-- 
     Document   : index
     Created on : 17.03.2016, 19:24:55
@@ -37,76 +38,106 @@
 
                         <form action="store.jsp" novalidate>
                             <button class="shop" type="submit">Shop</button>
-                        
-                        
+
+
                         </form>
 
+                        <% pageContext.setAttribute("logged", session.getAttribute("logged"));%>
+                        <% pageContext.setAttribute("username", session.getAttribute("username"));%>
 
-                        <form novalidate id="signIn" action="SignInServlet" method="post">
-                            <button class="login" type="button" data-toggle="modal" data-target="#myModal">Вход</button>
-                            <div class="modal fade" id="myModal" role="dialog">
-                                <div class="modal-dialog">
-                                    <div class="modal-content">
-                                        <div class="modal-header">
-                                            <button type="button" class="close" data-dismiss="modal">&times;</button>
-                                            <h4 class="modal-title">Вход</h4>
-                                        </div>
-                                        <div class="modal-body">
-                                            <label class="form-group">
-                                                <i class="fa fa-user"></i> Enter ur name
-                                                <input id="inputLogin" type="text" name="username" placeholder="Ur name" data-validation-required-message="Enter the name" required    >
-                                                <span class="help-block text-danger"></span>
-                                            </label>
-                                            <label class="form-group">
-                                                <i class="fa fa-unlock-alt"></i> Enter ur password
-                                                <input type="password" name="pass" data-minlength="6"  id="inputPassword" placeholder="Password" data-validation-required-message="Enter the password" required >
-                                                <span class="help-block text-danger"></span>
-                                            </label>
-                                        </div>
-                                        <div class="modal-footer">
-                                            <label id="errorMessage" class="footer_mes"> </label>
-                                            <button id="buttonSignIn" class="btn btn-default btn-lg" type="submit">Log in</button>
-                                        </div>
+                        <c:choose>
+                            <c:when test="${logged == true}">
+
+                                <div id="loggedUserContent" class="logged-user-content">
+
+                                    <div class="logged-user">
+                                        <a style="height: 32px" href="user_info.jsp"> <c:out value=" ${username} " /> </a>
                                     </div>
-                                </div>
-                            </div>
-                        </form>	
-                        
-                        <form novalidate id="signUp" action="SignUpServlet" method="post">
-                            <button class="login" type="button" data-toggle="modal" data-target="#myModal2">Регистрация</button>	
-                            <div class="modal fade" id="myModal2" role="dialog">
-                                <div class="modal-dialog">
-                                    <div class="modal-content">
-                                        <div class="modal-header">
-                                            <button type="button" class="close " data-dismiss="modal">&times;</button>
-                                            <h4 class="modal-title">Регистрация</h4>
-                                        </div>
-                                        <div class="modal-body">
-                                            <label class="form-group">
 
-                                                <i class="fa fa-user"></i> Enter ur name
-                                                <input type="text" name="username" placeholder="Ur name" data-validation-required-message="Enter the name" required    >
-                                                <span class="help-block text-danger"></span>
-                                            </label>
-                                            <label class="form-group">
-                                                <i class="fa fa-envelope"></i> Enter ur E-mail
-                                                <input type="email" name="email" placeholder="Email" data-validation-required-message="Enter the E-mail" required >
-                                                <span class="help-block text-danger"></span>
-                                            </label>
-                                            <label class="form-group">
-                                                <i class="fa fa-unlock-alt"></i> Enter ur password
-                                                <input type="password" name="pass" data-minlength="6"  placeholder="Password" data-validation-required-message="Enter the password" required >
-                                                <span class="help-block text-danger"></span>
-                                            </label>
-                                        </div>
-                                        <div class="modal-footer">
-                                            <button class="btn btn-default btn-lg" type="submit">Sign Up</button>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
+                                    <form style="float: right" action="SignInServlet" method="get">
+                                        <button class="login" type="submit"> Выход </button>
+                                    </form>
 
-                        </form>
+                                </div>
+
+                            </c:when>
+                            <c:otherwise>
+                                <div id="newcomerContent">
+                                    <form novalidate id="signIn" action="SignInServlet" method="post">
+                                        <button class="login" type="button" data-toggle="modal" data-target="#myModal">Вход</button>
+                                        <div class="modal fade" id="myModal" role="dialog">
+                                            <div class="modal-dialog">
+                                                <div class="modal-content">
+                                                    <div class="modal-header">
+                                                        <button type="button" class="close" data-dismiss="modal">&times;</button>
+                                                        <h4 class="modal-title">Вход</h4>
+                                                    </div>
+                                                    <div class="modal-body">
+                                                        <label class="form-group">
+                                                            <i class="fa fa-user"></i> Enter ur name
+                                                            <input id="inputLogin" type="text" name="username" placeholder="Ur name" data-validation-required-message="Enter the name" required    >
+                                                            <span class="help-block text-danger"></span>
+                                                        </label>
+                                                        <label class="form-group">
+                                                            <i class="fa fa-unlock-alt"></i> Enter ur password
+                                                            <input type="password" name="pass" data-minlength="6"  id="inputPassword" placeholder="Password" data-validation-required-message="Enter the password" required >
+                                                            <span class="help-block text-danger"></span>
+                                                        </label>
+                                                    </div>
+                                                    <div class="modal-footer">
+                                                        <label id="errorMessage" class="footer_mes"> </label>
+                                                        <button id="buttonSignIn" class="btn btn-default btn-lg" type="submit">Log in</button>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </form>	
+
+                                    <form novalidate id="signUp" action="SignUpServlet" method="post">
+                                        <button class="login" type="button" data-toggle="modal" data-target="#myModal2">Регистрация</button>	
+                                        <div class="modal fade" id="myModal2" role="dialog">
+                                            <div class="modal-dialog">
+                                                <div class="modal-content">
+                                                    <div class="modal-header">
+                                                        <button type="button" class="close " data-dismiss="modal">&times;</button>
+                                                        <h4 class="modal-title">Регистрация</h4>
+                                                    </div>
+                                                    <div class="modal-body">
+                                                        <label class="form-group">
+
+                                                            <i class="fa fa-user"></i> Enter ur name
+                                                            <input type="text" name="username" placeholder="Ur name" data-validation-required-message="Enter the name" required    >
+                                                            <span class="help-block text-danger"></span>
+                                                        </label>
+                                                        <label class="form-group">
+                                                            <i class="fa fa-envelope"></i> Enter ur E-mail
+                                                            <input type="email" name="email" placeholder="Email" data-validation-required-message="Enter the E-mail" required >
+                                                            <span class="help-block text-danger"></span>
+                                                        </label>
+                                                        <label class="form-group">
+                                                            <i class="fa fa-unlock-alt"></i> Enter ur password
+                                                            <input type="password" name="pass" data-minlength="6"  placeholder="Password" data-validation-required-message="Enter the password" required >
+                                                            <span class="help-block text-danger"></span>
+                                                        </label>
+                                                    </div>
+                                                    <div class="modal-footer">
+                                                        <button class="btn btn-default btn-lg" type="submit">Sign Up</button>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                    </form>
+
+                                </div>
+
+                            </c:otherwise>
+                        </c:choose>
+
+
+
+
+
                     </div>	
                 </div>
             </div>
@@ -129,8 +160,7 @@
 
 
 
-
-        <section id="about" class="j_about" >
+        <section class="j_about" >
             <div class="section_header">
                 <h2>About us</h2>
                 <div class="s_descr_wrap">
@@ -225,7 +255,7 @@
 
 
 
-        <section id="about" class="b_about">
+        <section class="b_about">
             <div class="section_conteiner">
                 <div class="container">
                     <div class="row">
@@ -268,7 +298,7 @@
 
 
 
-        <section id="about" class="i_about">
+        <section class="i_about">
             <div class="section_conteiner">
                 <div class="container">
                     <div class="row">
@@ -315,7 +345,7 @@
 
 
 
-        <section id="about" class="k_about">
+        <section class="k_about">
             <div class="section_conteiner">
                 <div class="container">
                     <div class="row">
