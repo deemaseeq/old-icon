@@ -1,0 +1,59 @@
+/* 
+    Created on : 25.03.2016, 21:34:01
+    Author     : dmitriy
+*/
+
+.header-text {
+    font-family: "Impact", Charcoal, sans-serif;
+    padding-left: 10px;
+    padding-right: 10px;
+}
+
+.desc {
+    font-family: monospace;
+    font-size: large;
+    text-align: center;
+    margin: auto;
+}
+
+.w3-third{
+    height: 140px;
+}
+
+.tagline {
+    font-family: monospace;
+}
+
+.w3-top{
+    width: 100%;
+    display: block;
+    top: 0;
+}
+
+.w3-card-4 {
+    width: 70%;
+    margin: auto;
+    margin-bottom: 16px;
+    margin-top: 16px;
+}
+
+.product-image {
+    width: 100%;
+}
+
+.image-container {
+    width: 30%;
+    vertical-align: central;
+    height: auto;
+    padding: auto;
+}
+
+.product-descr {
+    width: 70%;
+    padding: 0px;
+}
+.product-descr{
+    p{
+        width: 100%;
+    }
+} 

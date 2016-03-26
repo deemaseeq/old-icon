@@ -35,7 +35,7 @@
 
                     <div class="col-md-12">
 
-                        <form action="shop.jsp" novalidate>
+                        <form action="store.jsp" novalidate>
                             <button class="shop" type="submit">Shop</button>
                         
                         
