@@ -59,6 +59,29 @@ public class DatabaseInteraction {
         }
     }
     
+    public static List getProductListByType(int typeID){
+        
+        List products;
+        
+        try (Session session = HibernateUtil.getSessionFactory().openSession()){
+            String queryString = "from Product where product_type_id=" + typeID;
+            products = session.createQuery(queryString).list();
+            return products;
+        }
+    }
+    
+    public static List getProductTypeList(){
+        
+        List types;
+        
+        try (Session session = HibernateUtil.getSessionFactory().openSession()){
+            String queryString = "from ProductType";
+            types = session.createQuery(queryString).list();
+            return types;
+        }
+        
+    }
+    
     public static Product getProduct(Integer id){
         Product product;
         
