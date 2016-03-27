@@ -36,10 +36,8 @@
 
                     <div class="col-md-12">
 
-                        <form action="store.jsp" novalidate>
+                        <form action="store.jsp">
                             <button class="shop" type="submit">Shop</button>
-
-
                         </form>
 
                         <% pageContext.setAttribute("logged", session.getAttribute("logged"));%>
@@ -51,7 +49,7 @@
                                 <div id="loggedUserContent" class="logged-user-content">
 
                                     <div class="logged-user">
-                                        <a style="height: 32px" href="user_info.jsp"> <c:out value=" ${username} " /> </a>
+                                        <a href="user_info.jsp"> <c:out value=" ${username} " /> </a>
                                     </div>
 
                                     <form style="float: right" action="SignInServlet" method="get">
