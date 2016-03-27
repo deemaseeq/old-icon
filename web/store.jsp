@@ -6,7 +6,6 @@
 --%>
 
 <%@page import="dao.DatabaseInteraction"%>
-<%@page import="products.View" %>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
@@ -54,8 +53,17 @@
 
                 </ul>
 
-                <nav class="w3-dropnav w3-white w3-card-2">
-                    SOME SHIT
+                <% pageContext.setAttribute("types", DatabaseInteraction.getProductTypeList()); %>
+                <nav class="w3-container w3-dropnav w3-white w3-card-4">
+                    <form action="ProductsProcessingServlet" method="get">
+
+                        <c:forEach var = "type" items = "${types}">
+                            <div class="w3-col filter-col">
+                                <input id="<c:out value="${type.getProductTypeID()}"/>" class="w3-check" type="checkbox">
+                                <label> <c:out value = " ${type.getProductTypeName()} "/> </label>
+                            </div>
+                        </c:forEach>
+                    </form>
                 </nav>
 
             </div>
@@ -64,6 +72,15 @@
 
         <% pageContext.setAttribute("products", DatabaseInteraction.getProductList());%>
         <div class="w3-container w3-white w3-padding-64">
+            
+            
+            <form class="sort w3-center w3-container w3-white w3-border" action="ProductProcessingServlet">
+                <h5>Сортировать</h5>
+                <ul>
+                    <li>по названию</li>
+                    <li>по цене</li>
+                </ul>
+            </form>
 
             <c:forEach var = "product" items = "${products}">
                 <div class="w3-card-4 w3-animate-bottom">
