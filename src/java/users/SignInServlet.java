@@ -5,7 +5,6 @@
  */
 package users;
 
-import dao.HibernateUtil;
 import dao.User;
 import java.io.IOException;
 import java.io.PrintWriter;
@@ -13,9 +12,7 @@ import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-import org.hibernate.Session;
 import dao.DatabaseInteraction;
-import javax.servlet.RequestDispatcher;
 import javax.servlet.http.HttpSession;
 
 /**
@@ -123,6 +120,7 @@ public class SignInServlet extends HttpServlet {
         newSession.setMaxInactiveInterval(600);
         newSession.setAttribute("logged", true);
         newSession.setAttribute("username", username);
+        newSession.setAttribute("id",user.getUserID());
         
         validValues(request, response);
     }
