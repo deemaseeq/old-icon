@@ -278,6 +278,23 @@ svg {
   background-color: rgba(0, 0, 0, 0.4);
   margin-right: 5px;
   margin-left: 5px; }
+  .login:hover {
+    color: #FF9933; }
+
+.shop {
+  width: 100px;
+  height: 32px;
+  float: left;
+  position: relative;
+  z-index: 1000;
+  outline: none;
+  display: inline;
+  color: #fff;
+  border: 2.5px;
+  background-color: rgba(0, 0, 0, 0.4);
+  margin-left: 5px; }
+  .shop:hover {
+    color: #FF9933; }
 
 .logged-user-content {
   text-align: center;
@@ -295,17 +312,21 @@ svg {
   .logged-user a {
     display: inline-block;
     height: 32px;
-    line-height: 32px; }
+    line-height: 32px;
+    color: threeddarkshadow;
+    font-weight: bold; }
 
 .close {
   outline: none; }
 
 .modal-header {
   outline: none;
-  background-color: #5cb85c; }
+  /*background-color: #5cb85c;*/
+  background-color: #333333; }
   .modal-header h4 {
     text-align: center;
-    letter-spacing: 3px; }
+    letter-spacing: 3px;
+    color: wheat; }
 
 .foot_descr a {
   color: orange;
@@ -373,19 +394,6 @@ svg {
 .googleMap {
   height: 300px;
   width: 100%; }
-
-.shop {
-  width: 100px;
-  height: 32px;
-  float: left;
-  position: relative;
-  z-index: 1000;
-  outline: none;
-  display: inline;
-  color: #fff;
-  border: 2.5px;
-  background-color: rgba(0, 0, 0, 0.4);
-  margin-left: 5px; }
 
 .footer_mes {
   float: left;

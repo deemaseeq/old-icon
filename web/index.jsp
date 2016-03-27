@@ -49,11 +49,13 @@
                                 <div id="loggedUserContent" class="logged-user-content">
 
                                     <div class="logged-user">
-                                        <a href="user_info.jsp"> <c:out value=" ${username} " /> </a>
+                                        <a href="user_info.jsp">
+                                            <i class="fa fa-user"></i>
+                                            <c:out value=" ${username} " /> </a>
                                     </div>
 
                                     <form style="float: right" action="SignInServlet" method="get">
-                                        <button class="login" type="submit"> Выход </button>
+                                        <button class="login" type="submit"><i class="fa fa-sign-out"></i> Выход </button>
                                     </form>
 
                                 </div>
@@ -97,7 +99,7 @@
                                             <div class="modal-dialog">
                                                 <div class="modal-content">
                                                     <div class="modal-header">
-                                                        <button type="button" class="close " data-dismiss="modal">&times;</button>
+                                                        <button type="button" class="close" data-dismiss="modal">&times;</button>
                                                         <h4 class="modal-title">Регистрация</h4>
                                                     </div>
                                                     <div class="modal-body">
@@ -131,9 +133,6 @@
 
                             </c:otherwise>
                         </c:choose>
-
-
-
 
 
                     </div>	
