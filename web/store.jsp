@@ -22,28 +22,41 @@
 
 
 
-    <script>
-        function myFunction() {
-            document.getElementById("demo").classList.toggle("w3-show");
-        }
-    </script>
-
+    <script src="js/storeStyle.js" ></script>
 
     <body>
         <header>
 
+            <% pageContext.setAttribute("logged", session.getAttribute("logged"));%>
+            <% pageContext.setAttribute("username", session.getAttribute("username"));%>
             <div class="w3-top">
                 <ul class="w3-navbar w3-card-2 w3-black">
-                    <li class="w3-center w3-hide-small">
+                    <li class="w3-center">
                         <label class="w3-xlarge header-text">OLD ICON SHOP</label>
                     </li>
-                    <li  class="w3-left"><a href="/OldIcon"><i class="fa fa-home w3-large"></i></a></li>
-                    <li  class="w3-right w3-hide-small"><a href="#"><i class="fa fa-user w3-large"></i></a></li>
-                    <li  class="w3-right w3-hide-small"><a href="#"><i class="fa fa-shopping-cart w3-large"></i></a></li>
-                    <li  class="w3-right w3-hide-small"><a href="#"><i class="fa fa-search w3-large"></i></a></li>
+                    <li  class="w3-left"><a class="w3-hover-amber" href="/OldIcon"><i class="fa fa-home w3-large"></i></a></li>
+                    <li  class="w3-right"><a class="w3-hover-amber" onclick="toggleFilter()"><i class="fa fa-search w3-large"></i></a></li>
+                    <li  class="w3-right"><a class="w3-hover-amber" href="#"><i class="fa fa-shopping-cart w3-large"></i></a></li>
+
+                    <c:choose>
+                        <c:when test="${logged == true}">
+                            <li  class="w3-right">
+                                <a class="w3-hover-amber" href="user_info.jsp">
+                                    <i class="fa fa-user w3-large"></i>
+                                    <c:out value="${username}" />
+                                </a>
+                            </li>
+                        </c:when>
+                        <c:otherwise>
+                            <li  class="w3-right"><a class="w3-hover-amber" href="#"><i class="fa fa-user w3-large"></i></a></li>
+                                </c:otherwise>
+                            </c:choose>
+
                 </ul>
 
-                
+                <nav class="w3-dropnav w3-white w3-card-2">
+                    SOME SHIT
+                </nav>
 
             </div>
 
