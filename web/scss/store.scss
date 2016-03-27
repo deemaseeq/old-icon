@@ -59,5 +59,34 @@
 } 
 
 .w3-dropnav {
+    position: relative;
+    padding: 30px;
+    margin: 0px;
     display: none;
+    width: 100%;
+}
+
+.filter-col{
+    width: 20%;
+    padding: 15px;
+}
+
+.sort {
+    width: 70%;
+    margin: auto;
+    h5{
+        display: inline;
+    }
+    ul{
+        display: inline;
+        li{
+            display: inline;
+            margin-left: 5px;
+            margin-right: 5px;
+        }
+    }
+}
+
+.active-sort {
+    text-decoration: underline;
 }

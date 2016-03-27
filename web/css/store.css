@@ -47,6 +47,29 @@
   width: 100%; }
 
 .w3-dropnav {
-  display: none; }
+  position: relative;
+  padding: 30px;
+  margin: 0px;
+  display: none;
+  width: 100%; }
+
+.filter-col {
+  width: 20%;
+  padding: 15px; }
+
+.sort {
+  width: 70%;
+  margin: auto; }
+  .sort h5 {
+    display: inline; }
+  .sort ul {
+    display: inline; }
+    .sort ul li {
+      display: inline;
+      margin-left: 5px;
+      margin-right: 5px; }
+
+.active-sort {
+  text-decoration: underline; }
 
 /*# sourceMappingURL=store.css.map */
