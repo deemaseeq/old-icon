@@ -57,12 +57,31 @@
                 <nav class="w3-container w3-dropnav w3-white w3-card-4">
                     <form action="ProductsProcessingServlet" method="get">
 
-                        <c:forEach var = "type" items = "${types}">
                             <div class="w3-col filter-col">
-                                <input id="<c:out value="${type.getProductTypeID()}"/>" class="w3-check" type="checkbox">
-                                <label> <c:out value = " ${type.getProductTypeName()} "/> </label>
+                                <input name="1" value="1_cheked" id="vaseline-check" class="w3-check" type="checkbox">
+                                <label>Vaseline</label>
                             </div>
-                        </c:forEach>
+                        
+                            <div class="w3-col filter-col">
+                                <input name="2" value="2_cheked" id="clothes-check" class="w3-check" type="checkbox">
+                                <label>Clothes</label>
+                            </div>
+                        
+                            <div class="w3-col filter-col">
+                                <input name="3" value="3_cheked" id="accessories-check" class="w3-check" type="checkbox">
+                                <label>Accessories</label>
+                            </div>
+                        
+                            <div class="w3-col filter-col">
+                                <input name="4" value="4_cheked" id="hair-supply-check" class="w3-check" type="checkbox">
+                                <label>Hair supply</label>
+                            </div>
+                        
+                            <div class="w3-col filter-col">
+                                <input name="5" value="5_cheked" id="other-check" class="w3-check" type="checkbox">
+                                <label>Other</label>
+                            </div>
+                        
                     </form>
                 </nav>
 
@@ -72,8 +91,8 @@
 
         <% pageContext.setAttribute("products", DatabaseInteraction.getProductList());%>
         <div class="w3-container w3-white w3-padding-64">
-            
-            
+
+
             <form class="sort w3-center w3-container w3-white w3-border" action="ProductProcessingServlet">
                 <h5>Сортировать</h5>
                 <ul>
