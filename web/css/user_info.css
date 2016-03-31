@@ -1,0 +1,67 @@
+/*
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+*/
+/* 
+    Created on : 29.03.2016, 23:59:27
+    Author     : Yckaa
+*/
+body {
+  font-family: "Raleway", sans-serif;
+  font-weight: normal;
+  font-size: 14px;
+  min-width: 320px;
+  position: relative;
+  line-height: 1.42857;
+  -webkit-font-smoothing: antialised; }
+
+.main_head {
+  min-height: 480px;
+  padding-top: 40px;
+  background-color: #FDF5E6; }
+
+.btn-group-vertical {
+  width: 100%; }
+  .btn-group-vertical button {
+    background-color: #D3D3D3;
+    border: none;
+    letter-spacing: 3px;
+    height: 40px; }
+    .btn-group-vertical button:hover {
+      box-shadow: 3px 3px 10px rgba(0, 0, 0, 0.3);
+      color: black;
+      background-color: #BEBEBE; }
+
+.settings {
+  border-right: 1px solid black; }
+
+.history {
+  padding-left: 50px; }
+
+.descr_up {
+  padding: 10px;
+  border-bottom: 1px solid #D3D3D3; }
+
+.one-order {
+  border: 1px solid #D3D3D3;
+  display: inline-block;
+  width: 100%; }
+
+.descr_down {
+  padding: 0px; }
+  .descr_down img {
+    width: 100px;
+    height: 100px; }
+  .descr_down p {
+    font-weight: 800;
+    margin: 0px; }
+
+.price {
+  padding-top: 30px;
+  padding-bottom: 30px;
+  height: 90px; }
+  .price h6 {
+    float: right; }
+
+/*# sourceMappingURL=user_info.css.map */
