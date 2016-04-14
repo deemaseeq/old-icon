@@ -5,7 +5,7 @@
     Author     : dmitriy
 --%>
 
-<%@page contentType="text/html" pageEncoding="UTF-8"%>
+<jsp:directive.page contentType="text/html" pageEncoding="UTF-8" />
 <!DOCTYPE html>
 <html>
     <head>
@@ -40,8 +40,8 @@
                             <button class="shop" type="submit">Shop</button>
                         </form>
 
-                        <% pageContext.setAttribute("logged", session.getAttribute("logged"));%>
-                        <% pageContext.setAttribute("username", session.getAttribute("username"));%>
+                        <jsp:scriptlet> pageContext.setAttribute("logged", session.getAttribute("logged")); </jsp:scriptlet>
+                        <jsp:scriptlet> pageContext.setAttribute("username", session.getAttribute("username"));</jsp:scriptlet>
 
                         <c:choose>
                             <c:when test="${logged == true}">
@@ -85,7 +85,7 @@
                                                         </label>
                                                     </div>
                                                     <div class="modal-footer">
-                                                        <label id="errorMessage" class="footer_mes"> </label>
+                                                        <label id="errorMessageLogin" class="footer_mes"> </label>
                                                         <button id="buttonSignIn" class="btn btn-default btn-lg" type="submit">Log in</button>
                                                     </div>
                                                 </div>
@@ -121,6 +121,7 @@
                                                         </label>
                                                     </div>
                                                     <div class="modal-footer">
+                                                        <label id="errorMessageReg" class="footer_mes"> </label>
                                                         <button class="btn btn-default btn-lg" type="submit">Sign Up</button>
                                                     </div>
                                                 </div>
@@ -144,7 +145,7 @@
                     <div class="top_centered">
                         <div class="top_text">
                             <h1>OLD ICON TATTOO SHOP</h1>
-                            <p>ОЦЕ ОНО ОТО ОСЬО МУЛЬТИКИ ЙОБАНІ</p>
+                            <p>K P A C U B O &nbsp; L U X U R Y</p>
                         </div>
                     </div>
                 </div>
@@ -598,7 +599,7 @@
         <script src="libs/jqBootstrapValidation/jqBootstrapValidation.js"></script>
         <script src="js/common.js"></script>
         <script src="libs/jqBootstrapValidation/jqBootstrapValidation.js"></script>
-        <script src="js/signIn.js"></script>
+        <script src="js/signUpIn.js"></script>
         <script src="http://maps.googleapis.com/maps/api/js"></script>
         <script>
             var myCenter = new google.maps.LatLng(49.993848, 36.238026);
