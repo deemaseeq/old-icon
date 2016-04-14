@@ -4,7 +4,11 @@
     Author     : dmitriy
 --%>
 
-<%@page contentType="text/html" pageEncoding="UTF-8"%>
+<%@page import="dao.User"%>
+<%@page import="dao.DatabaseInteraction"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<jsp:directive.page contentType="text/html" pageEncoding="UTF-8"/>
+
 <!DOCTYPE html>
 <html>
     <head>
@@ -19,15 +23,24 @@
         <link rel="stylesheet" href="css/fonts.css" /> 
         <link rel="stylesheet" href="css/user_info.css" />
     </head>
+    
+    <jsp:scriptlet>
+        String username = session.getAttribute("username").toString();
+        User loggedUser = DatabaseInteraction.getUser(username);
+    </jsp:scriptlet>
+
     <body>
         <header class="main_head">
             <div class="container">
+
                 <div class="row"><h1>Profile settings</h1>
                     <div class="col-md-4 settings">
 
-                        <h3>example@mail.ru</h3>
+                        <jsp:scriptlet> System.out.println(loggedUser.getUsername()); </jsp:scriptlet>
+
+                        <h3> <jsp:expression> loggedUser.getEmail() </jsp:expression> </h3>
                         <a href="#">изменить</a>
-                        <h3>JMICH</h3>
+                        <h3> <jsp:expression> loggedUser.getUsername() </jsp:expression> </h3>
                         <a href="#">изменить</a>
 
                         <h3><a href="#">изменить ваш пароль</a></h3>
@@ -39,7 +52,7 @@
                                 <p>xx.xx.xxxxy</p>
                             </div>
                             <div class="col-md-9 descr_down">
-                                <p><img src="img/products/lemon.jpg">
+                                <p><img src="img/products/lemon.jpg" alt="*">
                                     MAZH Tattoo Mint Vaseline</p>
                             </div>
                             <div class="col-md-3 price">
