@@ -4,9 +4,7 @@
         <param-name>contextConfigLocation</param-name>
         <param-value>/WEB-INF/applicationContext.xml</param-value>
     </context-param>
-    <listener>
-        <listener-class>org.springframework.web.context.ContextLoaderListener</listener-class>
-    </listener>
+    
     <servlet>
         <servlet-name>SignUpServlet</servlet-name>
         <servlet-class>users.SignUpServlet</servlet-class>
@@ -19,11 +17,7 @@
         <servlet-name>ProductsHandlingServlet</servlet-name>
         <servlet-class>products.ProductsHandlingServlet</servlet-class>
     </servlet>
-    <servlet>
-        <servlet-name>dispatcher</servlet-name>
-        <servlet-class>org.springframework.web.servlet.DispatcherServlet</servlet-class>
-        <load-on-startup>2</load-on-startup>
-    </servlet>
+    
     <servlet-mapping>
         <servlet-name>SignUpServlet</servlet-name>
         <url-pattern>/SignUpServlet</url-pattern>
@@ -36,10 +30,7 @@
         <servlet-name>ProductsHandlingServlet</servlet-name>
         <url-pattern>/ProductsHandlingServlet</url-pattern>
     </servlet-mapping>
-    <servlet-mapping>
-        <servlet-name>dispatcher</servlet-name>
-        <url-pattern>*.htm</url-pattern>
-    </servlet-mapping>
+    
     <session-config>
         <session-timeout>
             30
