@@ -15,33 +15,33 @@ import org.hibernate.annotations.GenericGenerator;
  * @author dmitriy
  */
 
-//@Entity
-//@Table(name = "user")
+@Entity
+@Table(name = "user")
 public class User implements Serializable {
     
-//    @Id
-//    @Column(name = "user_id")
-//    @GeneratedValue(generator = "increment")
-//    @GenericGenerator(name = "increment", strategy = "increment")
+    @Id
+    @Column(name = "user_id")
+    @GeneratedValue(generator = "increment")
+    @GenericGenerator(name = "increment", strategy = "increment")
     private Integer userID;
     
-//    @Column(name = "user_name")
+    @Column(name = "user_name", nullable = false, unique = true)
     private String username;
     
-//    @Column(name = "user_password")
+    @Column(name = "user_password", nullable = false)
     private String password;
     
-//    @Column(name = "user_email")
+    @Column(name = "user_email", nullable = false, unique = true)
     private String email;
     
-//    @ManyToOne
-//    @JoinColumn(name = "user_group_id")
+    @Column(name = "user_register_date", nullable = false)
+    @Temporal(javax.persistence.TemporalType.DATE)
+    private Date registerDate;
+    
+    @ManyToOne(fetch = FetchType.EAGER, targetEntity = UserGroup.class)
+    @JoinColumn(name = "user_group_id", nullable = false, referencedColumnName = "group_id")
     private int userGroupID;
     
-//    @Column(name = "user_register_date")
-//    @Temporal(javax.persistence.TemporalType.DATE)
-    private Date registerDate;
-
     public User() {
     }
 

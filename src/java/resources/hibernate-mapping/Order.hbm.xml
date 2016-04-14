@@ -18,5 +18,9 @@
                   name="userID" 
                   type="integer" />
         
+        <property column="order_status"
+                  name="orderStatus" 
+                  type="string" />
+        
     </class>
 </hibernate-mapping>

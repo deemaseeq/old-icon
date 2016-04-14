@@ -13,15 +13,15 @@ import javax.persistence.*;
  * @author dmitriy
  */
 
-//@Entity
-//@Table(name = "usergroup")
+@Entity
+@Table(name = "usergroup")
 public class UserGroup implements Serializable {
     
-//    @Id
-//    @Column(name = "group_id", nullable = false)
+    @Id
+    @Column(name = "group_id", nullable = false)
     private Integer groupID;
     
-//    @Column(name = "group_name", nullable = false)
+    @Column(name = "group_name", nullable = false)
     private String groupName;
 
     public UserGroup() {

@@ -17,13 +17,13 @@
                   name="productPic" 
                   type="string" />
         
-        <property column="product_descr_src"
+        <property column="product_descr"
                   name="productDescription"
                   type="string" />
         
         
         <property column="product_type_id"
-                  name="productTypeID"
+                  name="productType"
                   type="integer"/>
         
     </class>

@@ -5,36 +5,66 @@
  */
 package dao;
 
+import java.io.Serializable;
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.FetchType;
+import javax.persistence.ForeignKey;
+import javax.persistence.GeneratedValue;
+import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
+import javax.persistence.Table;
+import org.hibernate.annotations.GenericGenerator;
+
 /**
  *
  * @author dmitriy
  */
-public class Product {
-    
+@Entity
+@Table(name = "product")
+public class Product implements Serializable {
+
     private Integer productID;
+
     private String productName;
+
     private Double productPrice;
-    private Integer productTypeID;
+
+    private Integer productType;
+
     private String productPic;
+
     private String productDescription;
 
     public Product() {
     }
 
+    @Id
+    @Column(name = "product_id")
+    @GeneratedValue(generator = "increment")
+    @GenericGenerator(name = "increment", strategy = "increment")
     public Integer getProductID() {
         return productID;
     }
 
+    @Column(name = "product_name", nullable = false)
     public String getProductName() {
         return productName;
     }
 
+    @Column(name = "product_price")
     public Double getProductPrice() {
         return productPrice;
     }
 
-    public Integer getProductTypeID() {
-        return productTypeID;
+    @ManyToOne(fetch = FetchType.EAGER, targetEntity = ProductType.class)
+    public Integer getProductType() {
+        return productType;
+    }
+
+    public void setProductType(Integer productType) {
+        this.productType = productType;
     }
 
     public void setProductID(Integer productID) {
@@ -49,10 +79,7 @@ public class Product {
         this.productPrice = productPrice;
     }
 
-    public void setProductTypeID(Integer productTypeID) {
-        this.productTypeID = productTypeID;
-    }
-
+    @Column(name = "product_pic_src")
     public String getProductPic() {
         return productPic;
     }
@@ -61,6 +88,7 @@ public class Product {
         this.productPic = productPic;
     }
 
+    @Column(name = "product_descr")
     public String getProductDescription() {
         return productDescription;
     }
@@ -69,11 +97,4 @@ public class Product {
         this.productDescription = productDescription;
     }
 
-    @Override
-    public String toString() {
-        return "Product{" + "productID=" + productID + ", productName=" + productName + ", productPrice=" + productPrice + ", productTypeID=" + productTypeID + '}';
-    }
-    
-    
-    
 }
