@@ -57,17 +57,7 @@ public class SignUpServlet extends HttpServlet {
         response.setContentType("text/html;charset=UTF-8");
 
         try (PrintWriter out = response.getWriter()) {
-            /* TODO output your page here. You may use following sample code. */
-            out.println("<!DOCTYPE html>");
-            out.println("<html>");
-            out.println("<head>");
-            out.println("<title>Servlet SignUpServlet</title>");
-            out.println("</head>");
-            out.println("<body>");
-            out.println("<h1>Servlet SignUpServlet at " + request.getContextPath() + "</h1>");
-            out.println("<h2>Failed connection to database!</h2>");
-            out.println("</body>");
-            out.println("</html>");
+            out.println("Failed connection to database!");
         }
     }
 
@@ -77,17 +67,7 @@ public class SignUpServlet extends HttpServlet {
         response.setContentType("text/html;charset=UTF-8");
 
         try (PrintWriter out = response.getWriter()) {
-            /* TODO output your page here. You may use following sample code. */
-            out.println("<!DOCTYPE html>");
-            out.println("<html>");
-            out.println("<head>");
-            out.println("<title>Servlet SignUpServlet</title>");
-            out.println("</head>");
-            out.println("<body>");
-            out.println("<h1>Servlet SignUpServlet at " + request.getContextPath() + "</h1>");
-            out.println("<h2>This username or email is already taken.</h2>");
-            out.println("</body>");
-            out.println("</html>");
+            out.println("Этот логин или почтовый адрес уже заняты.");
         }
     }
 
@@ -97,22 +77,7 @@ public class SignUpServlet extends HttpServlet {
         response.setContentType("text/html;charset=UTF-8");
 
         try (PrintWriter out = response.getWriter()) {
-            /* TODO output your page here. You may use following sample code. */
-            out.println("<!DOCTYPE html>");
-            out.println("<html>");
-            out.println("<head>");
-            out.println("<title>Servlet SignUpServlet</title>");
-            out.println("</head>");
-            out.println("<body>");
-            out.println("<h1>Servlet SignUpServlet at " + request.getContextPath() + "</h1>");
-            out.println("<h2>User succesfully registered. Check database.</h2>");
-            out.println("<h2>");
-            out.println(username);
-            out.println(pass);
-            out.println(email);
-            out.println("</h2>");
-            out.println("</body>");
-            out.println("</html>");
+            out.println("Succesful register.");
         }
     }
 
@@ -165,6 +130,12 @@ public class SignUpServlet extends HttpServlet {
         
         if(pass.length() < 6){
             System.out.println("Password is too short!");
+            noConnectionResponse(request, response);
+            return;
+        }
+        
+        if(username.length() > 15){
+            System.out.println("Username is too long!");
             noConnectionResponse(request, response);
             return;
         }

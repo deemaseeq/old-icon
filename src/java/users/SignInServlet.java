@@ -38,25 +38,9 @@ public class SignInServlet extends HttpServlet {
             throws ServletException, IOException {
         response.setContentType("text/plain");
         response.setCharacterEncoding("UTF-8");
-
+        
         try (PrintWriter out = response.getWriter()) {
-
             out.println("Succesful login.");
-
-//            out.println("<!DOCTYPE html>");
-//            out.println("<html>");
-//            out.println("<head>");
-//            out.println("<title>Servlet SignInServlet</title>");
-//            out.println("</head>");
-//            out.println("<body>");
-//            out.println("<h1>Servlet SignInServlet at " + request.getContextPath() + "</h1>");
-//            out.println("<h2>");
-//            out.println(username + " " + pass + " " + email + " ");
-//            out.println("</h2>");
-//            out.println("<h2>");
-//            out.println("</h2>");
-//            out.println("</body>");
-//            out.println("</html>");
         }
     }
 
@@ -65,7 +49,6 @@ public class SignInServlet extends HttpServlet {
         response.setContentType("text/plain");
         response.setCharacterEncoding("UTF-8");
         try (PrintWriter out = response.getWriter()) {
-
             out.println("Invalid Values.");
         }
     }
