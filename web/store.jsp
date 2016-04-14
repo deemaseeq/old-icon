@@ -62,31 +62,31 @@
                 <nav class="w3-container w3-dropnav w3-white w3-card-4">
                     <form action="ProductsProcessingServlet" method="get">
 
-                            <div class="w3-col filter-col">
-                                <input name="1" value="1_cheked" id="vaseline-check" class="w3-check" type="checkbox">
-                                <label>Vaseline</label>
-                            </div>
-                        
-                            <div class="w3-col filter-col">
-                                <input name="2" value="2_cheked" id="clothes-check" class="w3-check" type="checkbox">
-                                <label>Clothes</label>
-                            </div>
-                        
-                            <div class="w3-col filter-col">
-                                <input name="3" value="3_cheked" id="accessories-check" class="w3-check" type="checkbox">
-                                <label>Accessories</label>
-                            </div>
-                        
-                            <div class="w3-col filter-col">
-                                <input name="4" value="4_cheked" id="hair-supply-check" class="w3-check" type="checkbox">
-                                <label>Hair supply</label>
-                            </div>
-                        
-                            <div class="w3-col filter-col">
-                                <input name="5" value="5_cheked" id="other-check" class="w3-check" type="checkbox">
-                                <label>Other</label>
-                            </div>
-                        
+                        <div class="w3-col filter-col">
+                            <input name="1" value="1_cheked" id="vaseline-check" class="w3-check" type="checkbox">
+                            <label>Vaseline</label>
+                        </div>
+
+                        <div class="w3-col filter-col">
+                            <input name="2" value="2_cheked" id="clothes-check" class="w3-check" type="checkbox">
+                            <label>Clothes</label>
+                        </div>
+
+                        <div class="w3-col filter-col">
+                            <input name="3" value="3_cheked" id="accessories-check" class="w3-check" type="checkbox">
+                            <label>Accessories</label>
+                        </div>
+
+                        <div class="w3-col filter-col">
+                            <input name="4" value="4_cheked" id="hair-supply-check" class="w3-check" type="checkbox">
+                            <label>Hair supply</label>
+                        </div>
+
+                        <div class="w3-col filter-col">
+                            <input name="5" value="5_cheked" id="other-check" class="w3-check" type="checkbox">
+                            <label>Other</label>
+                        </div>
+
                     </form>
                 </nav>
 
@@ -128,20 +128,11 @@
                         </div>
 
                         <div class="w3-right w3-container product-descr">
-                            <p> <c:out value = "${product.getProductTypeID()}" /> </p>
+                            <p> <c:out value = "${product.getProductType()}" /> </p>
 
-                            <article>Professional Tattoo Vaseline с ароматом от MAZH TATTOO:
-                                <ul>
-                                    <li>становится прозрачным на коже;</li>
-                                    <li>не стирает трансфер;</li>
-                                    <li>экономно расходуется;</li>
-                                    <li>питает и защищает кожу клиента;</li>
-                                    <li>ускоряет заживление;</li>
-                                    <li>имеет приятный аромат, который раскрывается в процессе работы.</li>
-                                </ul>
-                                Фактический цвет продукта может отличаться от изображенного.
-                                Объем: 300 мл
-                            </article>
+
+                            ${product.getProductDescription()}
+
 
                             <p><button class="w3-btn-block w3-grey">Купить</button></p>
 
