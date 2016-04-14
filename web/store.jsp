@@ -6,7 +6,7 @@
 --%>
 
 <%@page import="dao.DatabaseInteraction"%>
-<%@page contentType="text/html" pageEncoding="UTF-8"%>
+<jsp:directive.page contentType="text/html" pageEncoding="UTF-8" />
 <!DOCTYPE html>
 <html>
 
@@ -26,8 +26,11 @@
     <body>
         <header>
 
-            <% pageContext.setAttribute("logged", session.getAttribute("logged"));%>
-            <% pageContext.setAttribute("username", session.getAttribute("username"));%>
+            <jsp:scriptlet>
+                pageContext.setAttribute("logged", session.getAttribute("logged"));
+                pageContext.setAttribute("username", session.getAttribute("username"));
+            </jsp:scriptlet>
+
             <div class="w3-top">
                 <ul class="w3-navbar w3-card-2 w3-black">
                     <li class="w3-center">
@@ -53,7 +56,9 @@
 
                 </ul>
 
-                <% pageContext.setAttribute("types", DatabaseInteraction.getProductTypeList()); %>
+                <jsp:scriptlet>
+                    pageContext.setAttribute("types", DatabaseInteraction.getProductTypeList());
+                </jsp:scriptlet>
                 <nav class="w3-container w3-dropnav w3-white w3-card-4">
                     <form action="ProductsProcessingServlet" method="get">
 
@@ -89,8 +94,10 @@
 
         </header>
 
-        <% pageContext.setAttribute("products", DatabaseInteraction.getProductList());%>
-        <div class="w3-container w3-white w3-padding-64">
+        <jsp:scriptlet>
+            pageContext.setAttribute("products", DatabaseInteraction.getProductList());
+        </jsp:scriptlet>
+        <div class="w3-container w3-white w3-margin-64">
 
 
             <form class="sort w3-center w3-container w3-white w3-border" action="ProductProcessingServlet">
