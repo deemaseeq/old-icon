@@ -36,12 +36,16 @@
 
                     <div class="col-md-12">
 
-                        <form action="store.jsp">
+                        <a href="store.jsp">
                             <button class="shop" type="submit">Shop</button>
-                        </form>
+                        </a>
 
-                        <jsp:scriptlet> pageContext.setAttribute("logged", session.getAttribute("logged")); </jsp:scriptlet>
-                        <jsp:scriptlet> pageContext.setAttribute("username", session.getAttribute("username"));</jsp:scriptlet>
+                        <jsp:scriptlet>
+                            pageContext.setAttribute("logged", session.getAttribute("logged"));
+                        </jsp:scriptlet>
+                        <jsp:scriptlet>
+                            pageContext.setAttribute("username", session.getAttribute("username"));
+                        </jsp:scriptlet>
 
                         <c:choose>
                             <c:when test="${logged == true}">

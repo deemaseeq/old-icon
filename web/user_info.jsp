@@ -6,7 +6,7 @@
 
 <%@page import="dao.User"%>
 <%@page import="dao.DatabaseInteraction"%>
-<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <jsp:directive.page contentType="text/html" pageEncoding="UTF-8"/>
 
 <!DOCTYPE html>
@@ -33,10 +33,13 @@
         <header class="main_head">
             <div class="container">
 
-                <div class="row"><h1>Profile settings</h1>
+                <div class="row">
+                    <h1>Profile settings</h1>
                     <div class="col-md-4 settings">
 
-                        <jsp:scriptlet> System.out.println(loggedUser.getUsername()); </jsp:scriptlet>
+                        <jsp:scriptlet>
+                            System.out.println(loggedUser.getUsername());
+                        </jsp:scriptlet>
 
                         <h3> <jsp:expression> loggedUser.getEmail() </jsp:expression> </h3>
                         <a href="#">изменить</a>
