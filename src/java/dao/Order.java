@@ -24,25 +24,25 @@ import org.hibernate.annotations.GenericGenerator;
  * @author dmitriy
  */
 
-@Entity
-@Table(name = "order")
+//@Entity
+//@Table(name = "order")
 public class Order implements Serializable {
 
-    @Id
-    @Column(name = "order_id")
-    @GeneratedValue(generator = "increment")
-    @GenericGenerator(name = "increment", strategy = "increment")
+//    @Id
+//    @Column(name = "order_id")
+//    @GeneratedValue(generator = "increment")
+//    @GenericGenerator(name = "increment", strategy = "increment")
     private Integer orderID;
 
-    @Column(name = "order_date")
-    @Temporal(javax.persistence.TemporalType.DATE)
+//    @Column(name = "order_date")
+//    @Temporal(javax.persistence.TemporalType.DATE)
     private Date orderDate;
     
-    @Column(name = "order_status")
+//    @Column(name = "order_status")
     private String orderStatus;
 
-    @ManyToOne(fetch = FetchType.LAZY, targetEntity = User.class)
-    @JoinColumn(name = "user_id", referencedColumnName = "user_id")
+//    @ManyToOne(fetch = FetchType.LAZY, targetEntity = User.class)
+//    @JoinColumn(name = "user_id", referencedColumnName = "user_id")
     private Integer userID;
 
     public Order() {

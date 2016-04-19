@@ -90,4 +90,25 @@ public class DatabaseInteraction {
             return product;
         }
     }
+    
+    public static List getOrderList(Integer userID){
+        List orders;
+        
+        try (Session session = HibernateUtil.getSessionFactory().openSession()){
+            String queryString = "from Order where user_id=" + userID;
+            orders = session.createQuery(queryString).list();
+            return orders;
+        }
+        
+    }
+    
+    public static List getProductsByOrder(Integer orderId){
+        List orderedProducts;
+        
+        try (Session session = HibernateUtil.getSessionFactory().openSession()){
+            String queryString = "from OrderedProduct where order_id=" + orderId;
+            orderedProducts = session.createQuery(queryString).list();
+            return orderedProducts;
+        }
+    }
 }
