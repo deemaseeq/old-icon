@@ -23,7 +23,7 @@
         <link rel="stylesheet" href="css/fonts.css" /> 
         <link rel="stylesheet" href="css/user_info.css" />
     </head>
-    
+
     <jsp:scriptlet>
         String username = session.getAttribute("username").toString();
         User loggedUser = DatabaseInteraction.getUser(username);
@@ -41,27 +41,35 @@
                             System.out.println(loggedUser.getUsername());
                         </jsp:scriptlet>
 
-                        <h3> <jsp:expression> loggedUser.getEmail() </jsp:expression> </h3>
-                        <a href="#">изменить</a>
-                        <h3> <jsp:expression> loggedUser.getUsername() </jsp:expression> </h3>
-                        <a href="#">изменить</a>
+                        <h3> <jsp:expression> loggedUser.getEmail()</jsp:expression> </h3>
+                            <a href="#">изменить</a>
+                            <h3> <jsp:expression> loggedUser.getUsername()</jsp:expression> </h3>
+                            <a href="#">изменить</a>
 
-                        <h3><a href="#">изменить ваш пароль</a></h3>
-                    </div>
+                            <h3><a href="#">изменить ваш пароль</a></h3>
+                        </div>
+
+                    
                     <div class="col-md-8 history">
+
+
                         <div class="one-order">
                             <div class="descr_up">
                                 <h4>Order №</h4>
                                 <p>xx.xx.xxxxy</p>
                             </div>
-                            <div class="col-md-9 descr_down">
-                                <p><img src="img/products/lemon.jpg" alt="*">
-                                    MAZH Tattoo Mint Vaseline</p>
+                            <div class="ordered-product">
+                                <div class="col-md-9 descr_down">
+                                    <p><img src="img/products/lemon.jpg" alt="*">
+                                        MAZH Tattoo Mint Vaseline</p>
+                                </div>
+                                <div class="col-md-3 price">
+                                    <h6>$120.00</h6>
+                                </div>
                             </div>
-                            <div class="col-md-3 price">
-                                <h6>$120.00</h6>
-                            </div>
+
                         </div>
+
                     </div>
                 </div>
             </div>

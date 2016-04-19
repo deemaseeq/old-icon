@@ -42,8 +42,6 @@
 
                         <jsp:scriptlet>
                             pageContext.setAttribute("logged", session.getAttribute("logged"));
-                        </jsp:scriptlet>
-                        <jsp:scriptlet>
                             pageContext.setAttribute("username", session.getAttribute("username"));
                         </jsp:scriptlet>
 
